@@ -31,6 +31,75 @@
   timestamp = {2012.07.16}
 }
 
+@ARTICLE{Ahunbay2009,
+  author = {Ergun E. Ahunbay, Cheng Peng, Andrew Godley, Christopher Schultz,
+	and X. Allen Li},
+  title = {An on-line replanning method for head and neck adaptive radiotherapy},
+  journal = {Med. Phys},
+  year = {2009},
+  volume = {36},
+  pages = {4776-4790},
+  abstract = {Daily setup for head and neck HN radiotherapy RT can vary randomly
+	due to neck rotation and
+	
+	anatomy change. These differences cannot be totally corrected by the
+	current practice of image
+	
+	guided RT with translational repositioning. The authors present a
+	novel rapid correction scheme that
+	
+	can be used on-line to correct both interfractional setup variation
+	and anatomy change for HN RT.
+	
+	The scheme consists of two major steps: (1) Segment aperture morphing
+	(SAM) and (2) segment
+	
+	weight optimization SWO. SAM is accomplished by applying the spatial
+	relationship between the
+	
+	apertures and the contours of the planning target and organs at risk
+	OARs to the new target and
+	
+	OAR contours. The new target contours are transferred from planning
+	target contours to the CT of
+	
+	the day by means of deformable registration (MIMVISTA). The dose distribution
+	for each new
+	
+	aperture was generated using a planning system with a fast dose engine
+	and hardware and was input
+	
+	into a newly developed SWO package using fast sequential quadratic
+	programming. The entire
+	
+	scheme was tested based on the daily CT images acquired for representative
+	HN IMRT cases
+	
+	treated with a linac and CT-on-Rails combo. It was found that the
+	target coverage and/or OAR
+	
+	sparing was degraded based on the CT of the day with the current standard
+	repositioning from rigid
+	
+	registration. This degradation can be corrected by the SAM/SWO scheme.
+	The target coverage and
+	
+	OAR sparing for the SAM/SWO plans were found to be equivalent to the
+	original plan. The
+	
+	SAM/SWO process took 5–8 min for the head and neck cases studied.
+	The proposed aperture
+	
+	morphing with weight optimization is an effective on-line approach
+	for correcting interfractional
+	
+	patient setup and anatomic changes for head and neck cancer radiotherapy.},
+  doi = {10.1118/1.3215532},
+  owner = {pinter},
+  review = {Does not use tools relevant for us},
+  timestamp = {2012.07.16}
+}
+
 @ARTICLE{Gossmann2010,
   author = {Michael S. Gossman and Morris I. Bank},
   title = {Dose-volume histogram quality assurance for linac-based treatment
@@ -258,6 +327,49 @@
   timestamp = {2012.06.27}
 }
 
+@ARTICLE{Ghilezan2010,
+  author = {Michel Ghilezan, MD, PhD, Di Yan, DSc, and Alvaro Martinez, MD},
+  title = {Adaptive Radiation Therapy for Prostate Cancer},
+  journal = {Semin. Radiat. Oncol.},
+  year = {2010},
+  volume = {20},
+  pages = {130-137},
+  abstract = {Adaptive radiotherapy has been introduced to manage an individual’s
+	treatment by, including patient-specific treatment variation identified
+	and quantified during the course of
+	
+	radiotherapy in the treatment planning and delivering optimization.
+	Early studies have demonstrated that this technique could significantly
+	improve the therapeutic ratio by safely
+	
+	reducing the large target margin that has to be used in conventional
+	radiotherapy for prostate cancer treatment. Clinical application
+	of off-line image-guided adaptive radiotherapy
+	
+	for prostate cancer has demonstrated encouraging clinical outcome.
+	Long-term clinical follow-up has shown significant improvement in
+	terms of tumor control and low toxicity
+	
+	profile, emphasizing the beneficial effect of image-guidance and adaptive
+	treatment. Continuous development in adaptive radiotherapy has made
+	possible additional increases in
+	
+	target dose by further reducing target margin when using online image-guided
+	adaptive intensity-modulated radiation therapy. However, clinical
+	implementation of new techniques
+	
+	should be explored cautiously and should include a comprehensive management
+	strategy to address uncertainties in target definition and delineation
+	in the preclinical implementation
+	
+	studies.},
+  doi = {10.1016/j.semradonc.2009.11.007},
+  owner = {pinter},
+  review = {Good overview of the improvements in prostate cancer RT treatments,
+	but not relevant in terms of current use cases},
+  timestamp = {2012.07.16}
+}
+
 @ARTICLE{Drzymala1999,
   author = {R. E. DRZYMALA, PH.D., R. MOHAN, PH.D.,L. BREWSTER, M.S.,J. CHU,
 	PH.D., M. GOITEIN, PH.D.,W. HARMS, B.S. AND M. URIE, PH.D.},
@@ -323,6 +435,7 @@
 005\;;
 1 ExplicitGroup:DVH\;0\;Drzymala1999\;Gossmann2010\;;
 1 ExplicitGroup:ART Use Cases\;0\;;
-2 ExplicitGroup:Not relevant\;0\;;
+2 ExplicitGroup:Not relevant\;0\;Ahunbay2009\;Duma2012\;Ghilezan2010\;
+;
 }
 
