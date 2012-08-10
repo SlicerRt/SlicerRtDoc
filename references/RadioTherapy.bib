@@ -1,4 +1,4 @@
-% This file was created with JabRef 2.8.1.
+% This file was created with JabRef 2.8.
 % Encoding: Cp1252
 
 @ARTICLE{Hwang2012,
@@ -13,6 +13,8 @@
   doi = {10.1118/1.3679859},
   file = {:Hwang2012.pdf:PDF},
   owner = {pinter},
+  review = {Rigid transform, DVH, D95, TPS features: aperture morphing, segment
+	weight optimizaiton},
   timestamp = {2012.07.18}
 }
 
@@ -65,7 +67,7 @@
 
 @ARTICLE{Ahunbay2009,
   author = {Ergun E. Ahunbay, Cheng Peng, Andrew Godley, Christopher Schultz,
-	and X. Allen Li},
+	X. Allen Li},
   title = {An on-line replanning method for head and neck adaptive radiotherapy},
   journal = {Med. Phys},
   year = {2009},
@@ -128,7 +130,8 @@
 	patient setup and anatomic changes for head and neck cancer radiotherapy.},
   doi = {10.1118/1.3215532},
   owner = {pinter},
-  review = {Does not use tools relevant for us},
+  review = {Does not use tools relevant for us (Segment Aperture Morphing and
+	Segment Weight Optimization)},
   timestamp = {2012.07.16}
 }
 
@@ -355,7 +358,8 @@
   doi = {10.1007/s00066-011-0041-8},
   owner = {pinter},
   review = {Technical details not much included, the used metrics and methods
-	are not enough to present as a use case for SlicerRT},
+	are not enough to present as a use case for SlicerRT (dose mean,
+	min, max, V95%)},
   timestamp = {2012.07.16}
 }
 
@@ -637,6 +641,10 @@
   doi = {10.1016/j.zemedi.2009.05.007},
   file = {:Boggula2009.pdf:PDF},
   owner = {pinter},
+  review = {kvCBCT HU estimation, isocenter shift, Active-Rx real-time dose modification
+	tool (fine-tuning; moving, redrawing isodose lines, erase hot/cold
+	spots), DVH comparison (based on D95, D60, D30 and mean dose). Note:
+	gamma was used for evaluation of the method.},
   timestamp = {2012.07.16}
 }
 
@@ -690,7 +698,7 @@
 
 @ARTICLE{Li2011,
   author = {Taoran Li, Danthai Thongphiew, Xiaofeng Zhu, WRobert Lee, Zeljko
-	Vujaskovic, Fang-Fang Yin and Q Jackie Wu},
+	Vujaskovic, Fang-Fang Yin, Q Jackie Wu},
   title = {Adaptive prostate IGRT combining online re-optimization and re-positioning:
 	a feasibility study},
   journal = {Phys. Med. Biol.},
@@ -724,6 +732,7 @@
   doi = {10.1088/0031-9155/56/5/002},
   file = {:Li2011.pdf:PDF},
   owner = {pinter},
+  review = {Rigid transform, DVH, V100%, V65%, V70Gy, D99},
   timestamp = {2012.07.30}
 }
 
@@ -736,8 +745,50 @@
   year = {2011},
   volume = {99},
   pages = {55-60},
+  abstract = {Background and purpose: This study assessed the potential of tomotherapy
+	based Image Guided Radiotherapy
+	
+	(IGRT) to increase the accuracy of bladder irradiation using a ‘plan
+	of the day’ adaptive radiotherapy
+	
+	(ART) technique.
+	
+	Materials and methods: Ten patients with muscle invasive bladder cancer
+	underwent bladder preservation
+	
+	with trimodality therapy in an ongoing trial. All patients received
+	64 Gy/32# to the whole bladder and
+	
+	seven of them received a boost of 68 Gy/32# to the tumour bed. The
+	ART technique entailed the generation
+	
+	of six IMRT plans for each patient, using six isotropic PTVs of 5–30
+	mm applied to the bladder volume
+	
+	(CTV) to generate the PTVs. Megavoltage CT (MVCT) imaging was done
+	to correct positioning errors
+	
+	and choose the ‘plan of the day’.
+	
+	Results: Post treatment MVCT scans (315 scans) were used to generate
+	multiple anisotropic PTVs for
+	
+	three hypothetical scenarios. Overall, coverage of anterior and superior
+	walls required larger margins
+	
+	than other walls. Maximum geographical miss, in spite of IGRT, was
+	noted for the superior (13.8%) and
+	
+	anterior walls (10.3%).
+	
+	Conclusions: Plan of the day ART is a feasible and promising technique
+	for optimal treatment and dose
+	
+	escalation in bladder cancer.},
   doi = {10.1016/j.radonc.2011.01.027},
+  file = {Murthy2011.pdf:Murthy2011.pdf:PDF},
   owner = {pinter},
+  review = {Rigid registration (bone-match), plan of the day},
   timestamp = {2012.07.31}
 }
 
@@ -777,8 +828,8 @@
 1 ExplicitGroup:Technical Notes\;0\;Alexander2007\;Deasy2003\;Lehmann2
 005\;;
 1 ExplicitGroup:DVH\;0\;Drzymala1999\;Gossmann2010\;;
-1 ExplicitGroup:ART Use Cases\;0\;Boggula2009\;Hwang2012\;Li2011\;Schw
-artz2012\;Welsh2006\;Wu2011\;;
+1 ExplicitGroup:ART Use Cases\;0\;Boggula2009\;Hwang2012\;Li2011\;Murt
+hy2011\;Welsh2006\;;
 2 ExplicitGroup:Not relevant\;0\;Ahunbay2009\;Duma2012\;Ghilezan2010\;
 Jensen2012\;Liu2011\;Murthy2011\;Tuomikoski2011\;;
 1 ExplicitGroup:Contour processing\;0\;Wang2005\;;
