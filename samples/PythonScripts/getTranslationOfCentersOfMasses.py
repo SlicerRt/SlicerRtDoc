@@ -42,5 +42,5 @@ def getTranslationOfCentersOfMasses(volumeNode1, volumeNode2):
 
   translation = []
   for i in [0,1,2]:
-  	translation.append(center2[i] - center1[i])
+    translation.append(center2[i] - center1[i])
   return translation
