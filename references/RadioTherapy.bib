@@ -1429,6 +1429,41 @@
   owner = {lasso},
   pii = {S0169-2607(13)00078-3},
   pmid = {23523366},
+  review = {GPL license? If it is really true, then collaboration on the implementation
+	is impossible. However, collaboration on validation methods and data
+	sets is still feasible.
+	
+	
+	They use a masked iterator to combine dose and structure set. It is
+	presented as a key technology, but seem to be equivalent with simply
+	processing with a stencil mask. Do they really create a mask volume
+	from the contours and use that for all calculations? What reference
+	volume they use as a basis of the voxelization of the contours? If
+	the iterator can be initialized with a set of contours (instead of
+	a binary mask) then it's nice - if not, then it's not very useful.
+	
+	
+	Multiple radiobiological models are implemented in the toolbox =>
+	good.
+	
+	
+	There are a few basic dose statistics and dose/plan comparison indices
+	implementations => good
+	
+	
+	They use a relational database (postgresql) for storing computed results
+	and computation algorithm parameters. Databases are not typical interfaces
+	for medical imaging applications (they mostly use DICOM files, other
+	proprietary file formats), so it's not a natural choice. However,
+	databases are typical inputs for data mining applications (such as
+	Rapidminer), so storing results in a standard relational database
+	makes sense (strange that the authors didn't mention the connection
+	between data mining and databases in the paper at all).
+	
+	
+	Although validation of the methods are much more difficult than implementing
+	the methods, there is not a word on validation. How did they validate
+	the data?},
   timestamp = {2013.05.27},
   url = {http://dx.doi.org/10.1016/j.cmpb.2013.03.002}
 }
