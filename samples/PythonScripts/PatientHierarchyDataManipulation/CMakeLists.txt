@@ -12,7 +12,7 @@ include(${Slicer_USE_FILE})
 #-----------------------------------------------------------------------------
 set(MODULE_PYTHON_SCRIPTS
   ${MODULE_NAME}.py
-  createSamplePatientHierarchyTree.py
+  CreatePatientHierarchyTreeLogicFunctions.py
   )
 
 set(MODULE_PYTHON_RESOURCES

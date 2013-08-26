@@ -4,17 +4,18 @@ import unittest
 from __main__ import vtk, qt, ctk, slicer
 
 #
+# ------------------------------------------------------------------------------
 # CreatePatientHierarchyTree
+# ------------------------------------------------------------------------------
 #
-
 class CreatePatientHierarchyTree:
   def __init__(self, parent):
-    parent.title = "CreatePatientHierarchyTree" # TODO make this more human readable by adding spaces
+    parent.title = "Create Patient Hierarchy tree"
     parent.categories = ["Examples"]
-    parent.dependencies = ["PatientHierarchy"]
-    parent.contributors = ["Mattea Welch (Queen's)"]
-    parent.helpText = """This is a module used to create a patient hierarchy."""
-    parent.acknowledgementText = """This file was originally developed by Mattea Welch, Perklab, Queen's University and was supported through the SWEP program.""" 
+    parent.dependencies = ["PatientHierarchy", "Contours"]
+    parent.contributors = ["Mattea Welch (Queen's University)"]
+    parent.helpText = """This is a module used to create a sample patient hierarchy tree containing basic objects."""
+    parent.acknowledgementText = """This file was originally developed by Mattea Welch, Perklab, Queen's University. Mattea Welch was supported through the SWEP program. This work is part of SparKit project, funded by Cancer Care Ontario (CCO)'s ACRU program and Ontario Consortium for Adaptive Interventions in Radiation Oncology (OCAIRO)."""
     self.parent = parent
 
     # Add this test to the SelfTest module's list for discovery when the module
@@ -31,9 +32,10 @@ class CreatePatientHierarchyTree:
     tester.runTest()
 
 #
+# ------------------------------------------------------------------------------
 # qCreatePatientHierarchyTreeWidget
+# ------------------------------------------------------------------------------
 #
-
 class CreatePatientHierarchyTreeWidget:
   def __init__(self, parent = None):
     if not parent:
@@ -47,30 +49,22 @@ class CreatePatientHierarchyTreeWidget:
       self.setup()
       self.parent.show()
 
+  #------------------------------------------------------------------------------
   def setup(self):
-    # Instantiate and connect widgets ...
-
-    
-    #
     # Reload and Test area
-    #
     reloadCollapsibleButton = ctk.ctkCollapsibleButton()
-    reloadCollapsibleButton.text = "Reload && Test"
+    reloadCollapsibleButton.text = "Reload and Test"
     self.layout.addWidget(reloadCollapsibleButton)
     reloadFormLayout = qt.QFormLayout(reloadCollapsibleButton)
 
-    # reload button
-    # (use this during development, but remove it when delivering
-    #  your module to users)
+    # Reload button
     self.reloadButton = qt.QPushButton("Reload")
     self.reloadButton.toolTip = "Reload this module."
     self.reloadButton.name = "CreatePatientHierarchyTree Reload"
     reloadFormLayout.addWidget(self.reloadButton)
     self.reloadButton.connect('clicked()', self.onReload)
-    
-    #
+
     # Parameters Area
-    #
     parametersCollapsibleButton = ctk.ctkCollapsibleButton()
     parametersCollapsibleButton.text = "Parameters"
     self.layout.addWidget(parametersCollapsibleButton)
@@ -78,24 +72,18 @@ class CreatePatientHierarchyTreeWidget:
     # Layout within the dummy collapsible button
     parametersFormLayout = qt.QFormLayout(parametersCollapsibleButton)
 
-    #
     # Patient and study name
-    #
     self.patientName = qt.QLineEdit()
-    parametersFormLayout.addRow("Patient Name: ", self.patientName)
-    
+    parametersFormLayout.addRow("Patient name: ", self.patientName)
+
     self.studyName = qt.QLineEdit()
-    parametersFormLayout.addRow("Study Name: ", self.studyName)
-    
-    #
+    parametersFormLayout.addRow("Study name: ", self.studyName)
+
     # Create structure sets
-    #
     self.structureSet = qt.QCheckBox()
-    parametersFormLayout.addRow("Create Structure Sets: ", self.structureSet)
-    
-    #
+    parametersFormLayout.addRow("Create structures: ", self.structureSet)
+
     # input volume selector
-    #
     self.volumeSelector = slicer.qMRMLNodeComboBox()
     self.volumeSelector.nodeTypes = ( ("vtkMRMLScalarVolumeNode"), "" )
     self.volumeSelector.addAttribute( "vtkMRMLScalarVolumeNode", "LabelMap", 0 )
@@ -106,36 +94,38 @@ class CreatePatientHierarchyTreeWidget:
     self.volumeSelector.showHidden = False
     self.volumeSelector.showChildNodeTypes = False
     self.volumeSelector.setMRMLScene( slicer.mrmlScene )
-    self.volumeSelector.setToolTip( "Pick the input to the algorithm." )
-    parametersFormLayout.addRow("Structure Set Volume: ", self.volumeSelector)
+    self.volumeSelector.setToolTip( "Volume that will serve as the anatomical volume in the created DICOM study and also as reference volume for the created structures." )
+    parametersFormLayout.addRow("Anatomical volume: ", self.volumeSelector)
 
-    #
     # Apply Button
-    #
     self.applyButton = qt.QPushButton("Apply")
-    self.applyButton.toolTip = "Run the algorithm."
-    #self.applyButton.enabled = False
+    self.applyButton.toolTip = "Create patient hierarchy tree"
+    # self.applyButton.enabled = False
     parametersFormLayout.addRow(self.applyButton)
 
-    # connections
+    # Connections
     self.applyButton.connect('clicked(bool)', self.onApplyButton)
     self.volumeSelector.connect("currentNodeChanged(vtkMRMLNode*)", self.onSelect)
-    
+
     # Add vertical spacer
     self.layout.addStretch(1)
 
+  #------------------------------------------------------------------------------
   def onSelect(self):
     self.applyButton.enabled = self.volumeSelector.currentNode()
 
+  #------------------------------------------------------------------------------
   def onApplyButton(self):
     self.patientID = self.patientName.text
     self.studyID = self.studyName.text
     self.generateStructureSets = self.structureSet.checkState() # 0 is true, 2 is false
     self.volumeNodeID = self.volumeSelector.currentNodeID
     logic = CreatePatientHierarchyTreeLogic()
-    print("Run the algorithm")
+
+    print("Create patient hierarchy tree")
     logic.run(self.patientID, self.studyID, self.generateStructureSets, self.volumeNodeID)
-    
+
+  #------------------------------------------------------------------------------
   def onReload(self,moduleName="CreatePatientHierarchyTree"):
     """Generic reload method for any scripted module.
     ModuleWizard will subsitute correct default moduleName.
@@ -176,12 +166,13 @@ class CreatePatientHierarchyTreeWidget:
     globals()[widgetName.lower()].setup()
 
 #
+# ------------------------------------------------------------------------------
 # CreatePatientHierarchyTreeLogic
+# ------------------------------------------------------------------------------
 #
-
 class CreatePatientHierarchyTreeLogic:
-  """This class should implement all the actual 
-  computation done by your module.  The interface 
+  """This class should implement all the actual
+  computation done by your module.  The interface
   should be such that other python code can import
   this class and make use of the functionality without
   requiring an instance of the Widget
@@ -190,7 +181,7 @@ class CreatePatientHierarchyTreeLogic:
     pass
 
   def hasImageData(self,volumeNode):
-    """This is a dummy logic method that 
+    """This is a dummy logic method that
     returns true if the passed in volume
     node has valid image data
     """
@@ -203,9 +194,7 @@ class CreatePatientHierarchyTreeLogic:
     return True
 
   def run(self,patientID,studyID,generateStructureSets,volumeNode):
-    import createSamplePatientHierarchyTree
-    createSamplePatientHierarchyTree = reload(createSamplePatientHierarchyTree)
-    createSamplePatientHierarchyTree.createSamplePatientHierarchyTree(patientID, studyID, generateStructureSets, volumeNode)
+    import CreatePatientHierarchyTreeLogicFunctions
+    CreatePatientHierarchyTreeLogicFunctions = reload(CreatePatientHierarchyTreeLogicFunctions)
+    CreatePatientHierarchyTreeLogicFunctions.createSamplePatientHierarchyTree(patientID, studyID, generateStructureSets, volumeNode)
     return True
-
-
