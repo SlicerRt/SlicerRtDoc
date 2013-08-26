@@ -74,13 +74,16 @@ class CreatePatientHierarchyTreeWidget:
 
     # Patient and study name
     self.patientName = qt.QLineEdit()
+    self.patientName.setText('SamplePatient')
     parametersFormLayout.addRow("Patient name: ", self.patientName)
 
     self.studyName = qt.QLineEdit()
+    self.studyName.setText('SampleStudy')
     parametersFormLayout.addRow("Study name: ", self.studyName)
 
     # Create structure sets
     self.structureSet = qt.QCheckBox()
+    self.structureSet.setChecked(True);
     parametersFormLayout.addRow("Create structures: ", self.structureSet)
 
     # input volume selector
@@ -196,5 +199,15 @@ class CreatePatientHierarchyTreeLogic:
   def run(self,patientID,studyID,generateStructureSets,volumeNode):
     import CreatePatientHierarchyTreeLogicFunctions
     CreatePatientHierarchyTreeLogicFunctions = reload(CreatePatientHierarchyTreeLogicFunctions)
+
+    info = qt.QDialog()
+    infoLayout = qt.QVBoxLayout()
+    info.setLayout(infoLayout)
+    label = qt.QLabel('Patient hierarchy tree is now being created...',info)
+    infoLayout.addWidget(label)
+    info.open()
+
     CreatePatientHierarchyTreeLogicFunctions.createSamplePatientHierarchyTree(patientID, studyID, generateStructureSets, volumeNode)
+    
+    info.close()
     return True
