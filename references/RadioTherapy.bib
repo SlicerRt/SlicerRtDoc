@@ -1,4 +1,4 @@
-% This file was created with JabRef 2.8.
+% This file was created with JabRef 2.9.2.
 % Encoding: Cp1252
 
 @INPROCEEDINGS{Gerig2001,
@@ -1035,6 +1035,81 @@
   timestamp = {2012.08.11}
 }
 
+@ARTICLE{Peter2000,
+  author = {Peter, Jörg and Martin P. Tornai and Ronald J. Jaszczak},
+  title = {Analytical Versus Voxelized Phantom Representation for Monte Carlo
+	Simulation in Radiological Imaging},
+  journal = {IEEE Transactions On Medical Imaging},
+  year = {2000},
+  volume = {19, No. 5},
+  pages = {556-564},
+  abstract = {Monte Carlo simulations in nuclear medicine,
+	
+	with accurately modeled photon transport and high-quality
+	
+	random number generators, require precisely defined and often
+	
+	detailed phantoms as an important component in the simulation
+	
+	process. Contemporary simulation models predominantly employ
+	
+	voxel-driven algorithms, but analytical models offer important advantages.
+	
+	We discuss the implementation of ray-solid intersection
+	
+	algorithms in analytical superquadric-based complex phantoms
+	
+	with additional speed-up rejection testing for use in nuclear
+	
+	medicine imaging simulations, and we make comparisons with
+	
+	voxelized counterparts. Comparisons are made with well-known
+	
+	cold rod : sphere and anthropomorphic phantoms. For these
+	
+	complex phantoms, the analytical phantom representations are
+	
+	nominally several orders of magnitude smaller in memory requirements
+	
+	than are voxelized versions. Analytical phantoms facilitate
+	
+	constant distribution parameters. As a consequence of discretizing
+	
+	a continuous surface into finite bins, for example, time-dependent
+	
+	voxelized phantoms can have difficulties preserving accurate
+	
+	volumes of a beating heart. Although virtually no inaccuracy
+	
+	is associated with path calculations in analytical phantoms,
+	
+	the discretization can negatively impact the simulation process
+	
+	and results. Discretization errors are apparent in reconstructed
+	
+	images of cold rod : sphere voxel-based phantoms because of a
+	
+	redistribution of the count densities in the simulated objects. These
+	
+	problems are entirely avoided in analytical phantoms. Voxelized
+	
+	phantoms can accurately model detailed human shapes based on
+	
+	segmented computed tomography (CT) or magnetic resonance
+	
+	imaging (MRI) images, but analytical phantoms offer advantages
+	
+	in time and accuracy for evaluation and investigation of imaging
+	
+	physics and reconstruction algorithms in a straightforward and
+	
+	efficient manner.},
+  doi = {10.1109/42.870266},
+  file = {Peter2000.pdf:Peter2000.pdf:PDF},
+  owner = {pinter},
+  timestamp = {2014.04.06}
+}
+
 @ARTICLE{Pinter2012,
   author = {Pinter, Csaba and Lasso, Andras and Wang, An and Jaffray, David and
 	Fichtinger, Gabor},
@@ -1168,6 +1243,91 @@
   file = {:Pieper2004.pdf:PDF},
   owner = {pinter},
   timestamp = {2012.06.27}
+}
+
+@ARTICLE{Stroom1999,
+  author = {Joep C. Stroom And Hans C. J. De Boer And Henk Huizenga, Andries
+	G. Visser},
+  title = {Inclusion Of Geometrical Uncertainties In Radiotherapy Treatment
+	Planning By Means Of Coverage Probability},
+  journal = {Int. J. Radiation Oncology Biol. Phys},
+  year = {1999},
+  volume = {43 No. 4},
+  pages = {905-919},
+  abstract = {Purpose: Following the ICRU-50 recommendations, geometrical uncertainties
+	in tumor position during radiotherapy
+	
+	treatments are generally included in the treatment planning by adding
+	a margin to the clinical target
+	
+	volume (CTV) to yield the planning target volume (PTV). We have developed
+	a method for automatic calculation
+	
+	of this margin.
+	
+	Methods and Materials: Geometrical uncertainties of a specific patient
+	group can normally be characterized by
+	
+	the standard deviation of the distribution of systematic deviations
+	in the patient group (S) and by the average
+	
+	standard deviation of the distribution of random deviations (s). The
+	CTV of a patient to be planned can be
+	
+	represented in a 3D matrix in the treatment room coordinate system
+	with voxel values one inside and zero outside
+	
+	the CTV. Convolution of this matrix with the appropriate probability
+	distributions for translations and rotations
+	
+	yields a matrix with coverage probabilities (CPs) which is defined
+	as the probability for each point to be covered
+	
+	by the CTV. The PTV can then be chosen as a volume corresponding to
+	a certain iso-probability level. Separate
+	
+	calculations are performed for systematic and random deviations. Iso-probability
+	volumes are selected in such
+	
+	a way that a high percentage of the CTV volume (on average > 99%)
+	receives a high dose (> 95%). The
+	
+	consequences of systematic deviations on the dose distribution in
+	the CTV can be estimated by calculation of dose
+	
+	histograms of the CP matrix for systematic deviations, resulting in
+	a so-called dose probability histogram (DPH).
+	
+	A DPH represents the average dose volume histogram (DVH) for all systematic
+	deviations in the patient group.
+	
+	The consequences of random deviations can be calculated by convolution
+	of the dose distribution with the
+	
+	probability distributions for random deviations. Using the convolved
+	dose matrix in the DPH calculation yields
+	
+	full information about the influence of geometrical uncertainties
+	on the dose in the CTV.
+	
+	Results: The model is demonstrated to be fast and accurate for a prostate,
+	cervix, and lung cancer case. A
+	
+	CTV-to-PTV margin size which ensures at least 95% dose to (on average)
+	99% of the CTV, appears to be equal
+	
+	to about 2S 1 0.7s for three all cases. Because rotational deviations
+	are included, the resulting margins can be
+	
+	anisotropic, as shown for the prostate cancer case.
+	
+	Conclusion: A method has been developed for calculation of CTV-to-PTV
+	margins based on the assumption that
+	
+	the CTV should be adequately irradiated with a high probability.},
+  file = {Stroom1999.pdf:Stroom1999.pdf:PDF},
+  owner = {pinter},
+  timestamp = {2014.04.06}
 }
 
 @ARTICLE{Thongphiew2009,
@@ -1490,6 +1650,61 @@
   timestamp = {2012.08.06}
 }
 
+@ARTICLE{Xie2009,
+  author = {Xie, Xiaoyan and Liu, Xu and Lin, Yuanfang},
+  title = {The investigation of data voxelization for a three-dimensional volumetric
+	display system},
+  journal = {Journal Of Optics A: Pure And Applied Optics},
+  year = {2009},
+  volume = {11},
+  pages = {5},
+  abstract = {A high resolution three-dimensional (3D) volumetric display system
+	utilizing a rotating
+	
+	light-emitting diode (LED) array is presented, which provides viewers
+	with true depth cues,
+	
+	binocular parallax, accommodation and convergence, etc, and can be
+	observed from any
+	
+	direction without the need for any special viewing aids. The data
+	voxelization method for the
+	
+	system is presented. The evaluation of texture distortion due to the
+	deviations of the voxel
+	
+	positions caused in voxelization is introduced. 3D models with two
+	types of texture are built:
+	
+	one in which the gray scale is nearly invariant in the background,
+	and the other in which the
+	
+	gray scale varies in the whole picture. The texture distortion of
+	models with the two types of
+	
+	texture is evaluated and a numerical analysis is given. The relationship
+	between texture
+	
+	distortion and voxelization precision is studied. Voxelization precision
+	can be improved by
+	
+	shortening the voxelization step length. Experiments show that models
+	with textures in which
+	
+	gray scale varies gradually in the whole picture need higher voxelization
+	precision than textures
+	
+	with an invariant gray scale background. In order to obtain similar
+	display quality, the ratio of
+	
+	the voxelization step length of models with the two types of texture
+	is about 5/2.},
+  doi = {10.1088/1464-4258/11/4/045707},
+  file = {Xie2009.pdf:Xie2009.pdf:PDF},
+  owner = {pinter},
+  timestamp = {2014.04.06}
+}
+
 @ARTICLE{Yang2011,
   author = {Yang, Deshan and Brame, Scott and Naqa, Issam El and Aditya, Apte
 	and Wu, Yu and S. Murty Goddu and Mutic, Sasa and Joseph O. Deasy
@@ -1780,7 +1995,8 @@ hy2011\;Murthy2011a\;Olsen2012\;Song2005\;Thongphiew2009\;Welsh2006\;W
 u2011\;;
 2 ExplicitGroup:Not relevant\;0\;Ahunbay2009\;Duma2012\;Ghilezan2010\;
 Jensen2012\;Liu2011\;Noel2010\;Tuomikoski2011\;Zhang2011\;;
-1 ExplicitGroup:Contour processing\;0\;Wang2005\;;
+1 ExplicitGroup:Contour processing\;0\;Deasy2003\;Drzymala1999\;Ebert2
+010\;Peter2000\;Stroom1999\;Wang2005\;Xie2009\;;
 1 ExplicitGroup:PerkLab\;0\;Pinter2012\;;
 1 ExplicitGroup:Hausdorff distance\;0\;Archip2007\;Chalana1997\;Crum20
 06\;Gerig2001\;Huttenlocher1993\;Klingensmith2000\;;
