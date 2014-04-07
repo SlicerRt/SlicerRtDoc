@@ -1,4 +1,4 @@
-% This file was created with JabRef 2.9.2.
+% This file was created with JabRef 2.8.
 % Encoding: Cp1252
 
 @INPROCEEDINGS{Gerig2001,
@@ -364,6 +364,43 @@
   file = {:Fraass1998.pdf:PDF},
   owner = {pinter},
   timestamp = {2012.07.16}
+}
+
+@ARTICLE{Fuchs1977,
+  author = {Fuchs, H. and Kedem, Z. M. and Uselton, S. P.},
+  title = {Optimal Surface Reconstruction from Planar Contours},
+  journal = {Commun. ACM},
+  year = {1977},
+  volume = {20},
+  pages = {693--702},
+  number = {10},
+  month = oct,
+  abstract = {In many scientific and technical endeavors, a three-dimensional solid
+	must be reconstructed from serial sections, either to aid in the
+	comprehension of the object's structure or to facilitate its automatic
+	manipulation and analysis. This paper presents a general solution
+	to the problem of constructing a surface over a set of cross-sectional
+	contours. This surface, to be composed of triangular tiles, is constructed
+	by separately determining an optimal surface between each pair of
+	consecutive contours. Determining such a surface is reduced to the
+	problem of finding certain minimum cost cycles in a directed toroidal
+	graph. A new fast algorithm for finding such cycles is utilized.
+	Also developed is a closed-form expression, in terms of the number
+	of contour points, for an upper bound on the number of operations
+	required to execute the algorithm. An illustrated example which involves
+	the construction of a minimum area surface describing a human head
+	is included.},
+  acmid = {359846},
+  address = {New York, NY, USA},
+  doi = {10.1145/359842.359846},
+  file = {Fuchs1977.pdf:Fuchs1977.pdf:PDF},
+  issn = {0001-0782},
+  issue_date = {Oct. 1977},
+  keywords = {continuous tone displays, contour data, minimum cost paths, serial
+	sections, surface reconstruction, three-dimensional computer graphics},
+  numpages = {10},
+  publisher = {ACM},
+  url = {http://doi.acm.org/10.1145/359842.359846}
 }
 
 @ARTICLE{Gay2007,
@@ -905,6 +942,50 @@
 	to tumor.},
   owner = {pinter},
   timestamp = {2014.02.03}
+}
+
+@ARTICLE{Meyers1992,
+  author = {Meyers, David and Skinner, Shelley and Sloan, Kenneth},
+  title = {Surfaces from Contours},
+  journal = {ACM Trans. Graph.},
+  year = {1992},
+  volume = {11},
+  pages = {228--258},
+  number = {3},
+  month = jul,
+  abstract = {This paper is concerned with the problem of reconstructing the surfaces
+	of three-dimensional objects, given a collection of planar contours
+	representing cross-sections through the objects. This problem has
+	important aplications in biomedical research and instruction, solid
+	modeling, and industrial inspection. The method we describe produces
+	a triangulated mesh from the data points of the contours which is
+	then used in conjunction with a piecewise parametric surface-fitting
+	algorithm to produce a reconstructed surface. The problem can be
+	broken into four subproblems: the correspondence problem (which contours
+	should be connected by the surface?), the tiling problem (how should
+	the contours be connected?), the branching problem (what do we do
+	when there are branches in the surface?), and the surface-fitting
+	problem (what is the precise geometry of the reconstructed surface?)
+	We describe our system for surface reconstruction from sets of contours
+	with respect to each of these subproblems. Special attention is given
+	to the correspondence and branching problems. We present a method
+	that can handle sets of contours in which adjacent contours share
+	a very contorted boundary, and we describe a new approach to solving
+	the correspondence problem using a Minimum Spanning Tree generated
+	from the contours.},
+  acmid = {131213},
+  address = {New York, NY, USA},
+  doi = {10.1145/130881.131213},
+  file = {Meyers1992.pdf:Meyers1992.pdf:PDF},
+  issn = {0730-0301},
+  issue_date = {July 1992},
+  keywords = {branching problem, branching surfaces, correspondence problem, meshes,
+	minimum spanning tree, surface fitting, surface reconstruction, tiling},
+  numpages = {31},
+  owner = {pinter},
+  publisher = {ACM},
+  timestamp = {2014.04.07},
+  url = {http://doi.acm.org/10.1145/130881.131213}
 }
 
 @ARTICLE{Murthy2011,
@@ -1996,7 +2077,8 @@ u2011\;;
 2 ExplicitGroup:Not relevant\;0\;Ahunbay2009\;Duma2012\;Ghilezan2010\;
 Jensen2012\;Liu2011\;Noel2010\;Tuomikoski2011\;Zhang2011\;;
 1 ExplicitGroup:Contour processing\;0\;Deasy2003\;Drzymala1999\;Ebert2
-010\;Peter2000\;Stroom1999\;Wang2005\;Xie2009\;;
+010\;Fuchs1977\;Meyers1992\;Peter2000\;Stroom1999\;Wang2005\;Xie2009\;
+;
 1 ExplicitGroup:PerkLab\;0\;Pinter2012\;;
 1 ExplicitGroup:Hausdorff distance\;0\;Archip2007\;Chalana1997\;Crum20
 06\;Gerig2001\;Huttenlocher1993\;Klingensmith2000\;;
